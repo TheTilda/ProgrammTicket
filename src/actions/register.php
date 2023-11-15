@@ -26,9 +26,9 @@ $stmt = $pdo->prepare($query);
 
 try {
     $stmt->execute($params);
+    redirect('/login-user.php');
     // $stms -> commit();
 } catch (\Exception $e) {
     die($e->getMessage());
 }
 
-redirect('/');

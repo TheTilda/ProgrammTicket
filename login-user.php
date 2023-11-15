@@ -1,4 +1,8 @@
+<?
+require_once __DIR__ . '/src/helper.php'
 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +19,10 @@
     <div id="registr-form">
         <div id="reg">
             <h2>Войти</h2>
-        <form action="login-user.php" method="POST">
+        <form action="/src/actions/login.php" method="POST">
+            <?php if(hasMessage("error")): ?>
+            <span><?php echo getMessage('error')?></span>
+            <?php endif; ?>
             <input name="login" class="reg-item inputs" type="text" placeholder="Email/Login">
             <input name="password" class="reg-item inputs" type="text" placeholder="Password">
             <button class="reg-item button" type="submit">Войти</button>

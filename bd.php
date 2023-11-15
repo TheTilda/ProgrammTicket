@@ -1,5 +1,5 @@
 <?php
-const host = '127.0.0.1';
+const host = '192.168.1.103';
 const port = '3306';
 const database = 'dvorec';
 const user = 'root';

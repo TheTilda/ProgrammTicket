@@ -20,7 +20,7 @@ body{
     color: white;
     text-align: center;
     width: 383px;
-    height: 469px;
+    
     margin: auto;
     display: block;
     background-color: #151515;
@@ -38,6 +38,7 @@ body{
 
 #logo-social{
     margin-top: 20px;
+    padding-bottom: 30px;
 }
 #reg h2{
     color: #FFF;

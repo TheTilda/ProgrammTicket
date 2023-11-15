@@ -11,9 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
-<style>#reg{
-    height: 546px;
-}</style>
+<style></style>
 <script src="script.js"></script>
 </head>
 <body>
