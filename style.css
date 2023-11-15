@@ -1,0 +1,104 @@
+body{
+    background-color: black;
+    font-family: Montserrat;
+}
+
+#registr-form{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+#reg{
+    color: white;
+    text-align: center;
+    width: 383px;
+    height: 469px;
+    margin: auto;
+    display: block;
+    background-color: #151515;
+    border-radius: 33px;
+    
+}
+#to-login{
+    margin-top: -5px;
+}
+#to-login a{
+    color: #F60;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#logo-social{
+    margin-top: 20px;
+}
+#reg h2{
+    color: #FFF;
+    margin: 38px 103.5px;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    
+}
+
+#reg input{
+    border-radius: 5.418px;
+    background: #E1E1E1;
+    width: 297px;
+    height: 54.182px;
+    flex-shrink: 0;
+}
+#personal-data{
+    width: 297px;
+    display: flex;
+    
+    margin: auto;
+}
+#personal-data input{
+    margin-top: 16px;
+
+    width: 20px;
+    height: 20px;
+}
+#soglas{
+    font-size: 12px;
+    margin-left: 10px;
+    text-align: left;
+}
+.reg-item{
+    margin: 20px auto;
+    display: block;
+
+    width: 297px;
+    height: 54.182px;
+    border-radius: 5.418px;
+    background: #E1E1E1;    
+    border: none;
+}
+#reg button{
+    font-family: Montserrat;
+    border-radius: 5.397px;
+    background: #F60;
+}
+
+.form-images{
+    width: 40px;
+    height: 40px;
+
+}
+
+#line{
+    width: 297px;
+    height: 0px;
+    flex-shrink: 0;
+    stroke-width: 4px;
+    stroke: #FFF;
+}
