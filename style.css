@@ -50,13 +50,16 @@ body{
     
 }
 
-#reg input{
+.inputs{
     border-radius: 5.418px;
     background: #E1E1E1;
     width: 297px;
     height: 54.182px;
     flex-shrink: 0;
 }
+
+
+
 #personal-data{
     width: 297px;
     display: flex;
@@ -84,7 +87,10 @@ body{
     background: #E1E1E1;    
     border: none;
 }
-#reg button{
+#submit-button{
+    width: 297px; 
+    height: 54.182px;
+
     font-family: Montserrat;
     border-radius: 5.397px;
     background: #F60;
@@ -103,3 +109,5 @@ body{
     stroke-width: 4px;
     stroke: #FFF;
 }
+
+

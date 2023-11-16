@@ -25,10 +25,10 @@ require_once __DIR__ . '/src/helper.php'
             <?php endif; ?>
             <input name="login" class="reg-item inputs" type="text" placeholder="Email/Login">
             <input name="password" class="reg-item inputs" type="text" placeholder="Password">
-            <button class="reg-item button" type="submit">Войти</button>
+            <button class="reg-item button" id="submit-button" type="submit">Войти</button>
         </form>
         <div id="to-login">
-        Нет аккаунта? <a href="registr.php">Создать</a>
+        Нет аккаунта? <a href="register.php">Создать</a>
         
         <svg xmlns="http://www.w3.org/2000/svg" width="301" height="4" viewBox="0 0 301 4" fill="none">
             <path d="M2 2H299" stroke="white" stroke-width="4" stroke-linecap="round"/>

@@ -13,6 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Montserrat&family=Poppins&family=Roboto&display=swap" rel="stylesheet">
 <style></style>
 <script src="script.js"></script>
+
 </head>
 <body>
     <div id="registr-form">
@@ -33,12 +34,11 @@
             <input name="password" class="reg-item inputs" type="password" placeholder="Password" required>
             <input name="repeat-password" class="reg-item inputs" type="password" placeholder="Repeat password" required>
             <div id="personal-data">
-            <b> <input id="check-1" type="checkbox" class="hide" name="personal_data"></b>
+            <input id="check-1" type="checkbox" required>
             <p id="soglas">Согласен с условиями обработки персональных данных</p>
             </div>
 
-            <button class="reg-item button123" type="submit" id="submit-button">Регистрация</button>
-            
+            <input class="reg-item" type="submit" id="submit-button">
         </form>
                 
         <div id="to-login">
