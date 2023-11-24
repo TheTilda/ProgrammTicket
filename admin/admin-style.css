@@ -202,9 +202,18 @@ a{
     border-radius: 15px;
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
-
+    display: flex;
+    flex-wrap: wrap;
     padding: 30px 0;
     
+    margin: 0 auto;
+}
+.create-poster button{
+    background-color: #FF6600;
+    border: none;
+
+    width: 98%;
+    height: 30px;
     margin: 0 auto;
 }
 .create-poster form{
@@ -214,10 +223,7 @@ a{
     flex-wrap: wrap;
 }
 
-h2{
-    margin: 0 auto;
-    margin-bottom: 20px;
-}
+
 
 #name{
     width: 100%;

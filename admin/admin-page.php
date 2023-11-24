@@ -18,7 +18,25 @@ print_r($array_names_org);
     <title>Админ-панель</title>
     <link rel="stylesheet" href="index-style.css">
     <link rel="stylesheet" href="admin-style.css">
+        <script>
+            function chpok(id, id_button){
+                elem = document.getElementById(id); //находим блок div по его id, который передали в функцию
+                btn = document.getElementById(id_button); //находим блок div по его id, который передали в функцию
+                state = elem.style.display; //смотрим, включен ли сейчас элемент
+                if (state == 'flex') {
+                    elem.style.display='none';
+                    btn.style.background='#FF6600';
+                    btn.textContent = 'Создать мероприятие';
 
+                } //если включен, то выключаем
+                else {elem.style.display='flex'; btn.style.background='#ff660077';btn.textContent = 'Скрыть';}; //иначе - включаем
+            }
+        </script>
+        <style>
+            #burger-form{
+                display: none;
+            }
+        </style>
 </head>
 <body>
 
@@ -29,8 +47,10 @@ print_r($array_names_org);
             </div>
             
             <div class="create-poster">
-                <form action="/admin/actions/poster">
-                    <h2>Создать мероприятие</h2>
+                <button id= "create-posters"onclick="chpok('burger-form', 'create-posters')">Создать мероприятие</button>
+
+                <form id="burger-form" action="/admin/actions/poster">
+                    
                     <input name="name"type="text" id="name" placeholder="Название мероприятия">
 
                     <select name="type" id="type_posters">
