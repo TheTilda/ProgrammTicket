@@ -21,15 +21,19 @@ require_once __DIR__ . "/src/helper.php";
             <?php if ($_SESSION['user']): ?>
                 <?php if ($_SESSION['user']['level'] > 1):?>
                     <div class="nav-item link">
-                    <a href="/admin-page.php">Админ-панель</a>
+                    <a href="/admin/admin-page.php">Админ-панель</a>
                     </div>
                 <?php endif; ?>
                 <div class="nav-item link">
                     <a href="#">Мои билеты</a>
                 </div>
                 <div class="nav-item">
-                    <a href="/profile.php"><img src="images/profile.gif" alt=""></a>
+                    <a href="/profile.php"><img src="images/profiles/profile.gif" alt=""></a>
                 </div>
+                <?php else: ?>
+                    <div class="nav-item">
+                        <a href="/profile.php"><img src="images/profiles/default.jpg" alt=""></a>
+                    </div>
             <?php endif; ?>
 
             

@@ -37,19 +37,48 @@ print_r($array_names_org);
                 display: none;
             }
         </style>
+                    <?php if($_SESSION['warn']['admin']['status'] == 1):?>
+                        <? $_SESSION['warn']['admin']['status'] = null; ?>
+                        <style>
+                            .warn{
+                                display: flex;
+                                margin-bottom: 20px;
+                                align-items: center;
+                                margin: 0 auto;
+                                margin-bottom: 20px;
+                                width: 98%;
+                                height: 30px;
+                                border: 2px solid green;
+                            }
+                            .warn h3{
+                                margin: 0 auto;
+                            }
+                        </style>
+                    <?php else:?>
+                        <style>
+                            .warn{
+                                display: none;
+                            }
+                        </style>
+                    <?php endif;?>
+
 </head>
 <body>
 
         <div id="container">
             <div class="conatiner-head">
                 <h1>Админ-панель</h1>
-                <a href="#">На главную</a>
+                <a href="/">На главную</a>
             </div>
             
             <div class="create-poster">
+                <div class="warn">
+                    <h3>Мероприятие успешно создано</h3>
+                </div>
+
                 <button id= "create-posters"onclick="chpok('burger-form', 'create-posters')">Создать мероприятие</button>
 
-                <form id="burger-form" action="/admin/actions/poster">
+                <form id="burger-form" action="actions/create-poster.php" method="post">
                     
                     <input name="name"type="text" id="name" placeholder="Название мероприятия">
 

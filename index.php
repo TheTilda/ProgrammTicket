@@ -5,12 +5,26 @@ require_once __DIR__ . '/bd.php';
 $pdo = getPDO();
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$result = $pdo->query("SELECT * FROM `users`");
+$result = $pdo->query("SELECT * FROM `posters`");
 
 $array = $result->fetchAll(PDO::FETCH_ASSOC);
-foreach ($array as $row) {
-    echo($row['login']);
-    echo('<br>');
+
+function num_to_month($month) {
+    $months = array(
+        'Январь'=> 1,
+        'Февраль' => 2,
+        'Март'=> 3,
+        'Апрель'=> 4,   
+        'Май'=> 5,
+        'Июнь'=> 6,
+        'Июль'=> 7,
+        'Август'=> 8,
+        'Сентябрь'=> 9,
+        'Октябрь'=> 10,
+        'Ноябрь'=> 11,
+        'Декабрь'=> 12
+    );
+    return array_search($month, $months);
 }
 
 
@@ -32,147 +46,32 @@ foreach ($array as $row) {
     <div id="container">
         <h1>Афиша</h1>
         <div class="content">
-
-            <div class="events">
+            <?php foreach($array as $row):?>
+                <div class="events">
                 <div class="event" onclick="location.href='#';" >
                     <img src="images/events/bernarda.jpg" alt="">
                     <div class="event-header">
-                        Дом Бернарды Альбы
+                        <?= $row['name']; ?>
                     </div>
                     <span class="event-cost">
-                        от 250 руб.
+                        от <?= $row['price']; ?>руб.
                     </span>
                     <span class="event-sale">
                         -15%
                     </span>
                     <span class="event-description">
                     <span class="date">
-                        25 ноября, 19:00 |
+                    <?= explode('-', $row['date'])[2]; ?> <?= num_to_month(explode('-', $row['date'])[1]); ?>, <?= $row['time']; ?> |
                     </span>
                     <span class="event-location">
-                        <a href="https://www.kemfil.ru/">Филармония</a>
+                        <a href="https://www.kemfil.ru/"><?= $row['organization']; ?></a>
                     </span>
                     </span>
 
                 </div>
             </div>
-            <div class="events" onclick="location.href='#';">
-                <div class="event">
-                    <img src="images/events/bernarda.jpg" alt="">
-                    <div class="event-header">
-                        Дом Бернарды Альбы
-                    </div>
-                    <span class="event-cost">
-                        от 250 руб.
-                    </span>
-                    <span class="event-sale">
-                        -15%
-                    </span>
-                    <span class="event-description">
-                    <span class="date">
-                        25 ноября, 19:00 |
-                    </span>
-                    <span class="event-location">
-                        <a href="https://www.kemfil.ru/">Филармония</a>
-                    </span>
-                    </span>
+            <?php endforeach;?>
 
-                </div>
-            </div>
-            <div class="events" onclick="location.href='#';">
-                <div class="event">
-                    <img src="images/events/bernarda.jpg" alt="">
-                    <div class="event-header">
-                        Дом Бернарды Альбы
-                    </div>
-                    <span class="event-cost">
-                        от 250 руб.
-                    </span>
-                    <span class="event-sale">
-                        -15%
-                    </span>
-                    <span class="event-description">
-                    <span class="date">
-                        25 ноября, 19:00 |
-                    </span>
-                    <span class="event-location">
-                        <a href="https://www.kemfil.ru/">Филармония</a>
-                    </span>
-                    </span>
-
-                </div>
-            </div>
-            <div class="events" onclick="location.href='#';">
-                <div class="event">
-                    <img src="images/events/bernarda.jpg" alt="">
-                    <div class="event-header">
-                        Дом Бернарды Альбы
-                    </div>
-                    <span class="event-cost">
-                        от 250 руб.
-                    </span>
-                    <span class="event-sale">
-                        -15%
-                    </span>
-                    <span class="event-description">
-                    <span class="date">
-                        25 ноября, 19:00 |
-                    </span>
-                    <span class="event-location">
-                        <a href="https://www.kemfil.ru/">Филармония</a>
-                    </span>
-                    </span>
-
-                </div>
-            </div>
-            <div class="events" onclick="location.href='#';">
-                <div class="event">
-                    <img src="images/events/bernarda.jpg" alt="">
-                    <div class="event-header">
-                        Дом Бернарды Альбы
-                    </div>
-                    <span class="event-cost">
-                        от 250 руб.
-                    </span>
-                    <span class="event-sale">
-                        -15%
-                    </span>
-                    <span class="event-description">
-                    <span class="date">
-                        25 ноября, 19:00 |
-                    </span>
-                    <span class="event-location">
-                        <a href="https://www.kemfil.ru/">Филармония</a>
-                    </span>
-                    </span>
-
-                </div>
-            </div>
-            <div class="events" onclick="location.href='#';">
-
-                <div class="event">
-                        <img src="images/events/bernarda.jpg" alt="">
-                    <div class="event-header">
-                        Дом Бернарды Альбы
-                    </div>
-                    <span class="event-cost">
-                        от 250 руб.
-                    </span>
-                    <span class="event-sale">
-                        -15%
-                    </span>
-                    <span class="event-description">
-                        <span class="date">
-                            25 ноября, 19:00 |
-                        </span>
-                        <span class="event-location">
-                            <a href="https://www.kemfil.ru/">Филармония</a>
-                        </span>
-                    </span>
-
-                </div>
-
-            </div>
         </div>
     </div>
 </body>
