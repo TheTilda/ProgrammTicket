@@ -48,8 +48,8 @@ function num_to_month($month) {
         <div class="content">
             <?php foreach($array as $row):?>
                 <div class="events">
-                <div class="event" onclick="location.href='#';" >
-                    <img src="images/events/bernarda.jpg" alt="">
+                <div class="event" onclick="location.href='/event.php?id=<?= $row['id']; ?>';" >
+                    <img src="images/events/<?= $row['photo']; ?>" alt="">
                     <div class="event-header">
                         <?= $row['name']; ?>
                     </div>

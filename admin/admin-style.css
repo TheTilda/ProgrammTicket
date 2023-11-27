@@ -223,7 +223,9 @@ a{
     flex-wrap: wrap;
 }
 
-
+#file-input{
+    width: 100%;
+}
 
 #name{
     width: 100%;

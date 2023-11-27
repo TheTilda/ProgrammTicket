@@ -126,10 +126,12 @@ a{
     background-color: rgb(37, 155, 155);
 } */
 .event img{
+    object-fit: cover;
     display: flex;
     border-radius: 10px;
     overflow: hidden;
     width: 90%;
+    height: 180px;
     margin: 0 auto;
     transition: 1s width;
 }

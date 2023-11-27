@@ -75,14 +75,14 @@ print_r($array_names_org);
                 <div class="warn">
                     <h3>Мероприятие успешно создано</h3>
                 </div>
-
+                
                 <button id= "create-posters"onclick="chpok('burger-form', 'create-posters')">Создать мероприятие</button>
+                
+                <form id="burger-form" enctype="multipart/form-data" action="actions/create-poster.php" method="post">
+                    <input type="file" name="userfile" id="file-input" required>
+                    <input name="name"type="text" id="name" placeholder="Название мероприятия" required>
 
-                <form id="burger-form" action="actions/create-poster.php" method="post">
-                    
-                    <input name="name"type="text" id="name" placeholder="Название мероприятия">
-
-                    <select name="type" id="type_posters">
+                    <select name="type" id="type_posters" required>
                         <option value="" disabled selected>Тип спектакля</option>
                         <option value="performance">Спектакль</option>
                         <option value="concert">Концерт</option>
@@ -90,21 +90,21 @@ print_r($array_names_org);
                         <option value="disco">Дискотека</option>    
                     </select>
 
-                        <input type="date" name="date" id="" placeholder="Дата">
+                        <input type="date" name="date" id="" placeholder="Дата" required>
 
-                        <input type="time" name="time" id=""placeholder="Время">
+                        <input type="time" name="time" id=""placeholder="Время" required>
 
-                    <textarea name="description" rows="5" cols="60" placeholder="Описание">Описание</textarea>
+                    <textarea name="description" rows="5" cols="60" placeholder="Описание" required>Описание</textarea>
 
-                    <select name="organization" id="type_posters">
+                    <select name="organization" id="type_posters" required>
                         <option value="" disabled selected>Выберите площадку</option>
                         <?php foreach($array_names_org as $row):?>
                             <? echo '<option value="'. $row['id'] .'">' . $row['name'] . '</option>'?>
 
                         <?php endforeach; ?>
                     </select>
-                    <input type="text" name="count-places" placeholder="Количество мест">
-                    <input name="price" type="text" placeholder="Цена">
+                    <input type="text" name="count-places" placeholder="Количество мест" required>
+                    <input name="price" type="text" placeholder="Цена" required>
                     <button id="submit-button"type="submit">Создать</button>
                 </form>
             </div>
