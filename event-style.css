@@ -1,0 +1,67 @@
+.event-main{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.event-main button{
+    font-family: 'Dela Gothic One';
+    background-color: #F60;
+    border: none;
+    font-size: 24px;
+    border-radius: 8px;
+    width: 100%;
+    height: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.event-image{
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    margin: 0 auto;
+}
+.event-image h2{
+    margin-left: 20px;
+    font-size: 25pt;
+}
+.event-image span{
+    width: 100%;
+    background-image: linear-gradient(to top,rgb(0, 0, 0), rgba(255, 255, 255, 0));
+}
+.event-image p{
+    font-size: 25pt;
+}
+.description{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.description p{
+    width: 90%;
+}
+
+.description-price-event{
+    width: 40%;
+    display: block;
+
+}
+
+
+.event-image img{
+
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+@media (max-width: 1044px) {
+    .event-main{
+        width: 100%;
+    }
+}

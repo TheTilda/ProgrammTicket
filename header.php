@@ -4,7 +4,7 @@ require_once __DIR__ . "/src/helper.php";
 ?>
 <link rel="stylesheet" href="index-style.css">
 <div class="header">
-        <div class="header-logo">
+        <div class="header-logo" onclick="location.href='/';">
             <img src="images/LOGO.svg" alt="">
         </div>
         <div class="header-search">

@@ -58,6 +58,9 @@ a{
     display: flex;
     align-items: center;
 }
+.header-logo:hover{
+    cursor: pointer;
+}
 .header-logo img{
     align-items: center;
     width: 200px;
@@ -114,14 +117,14 @@ a{
 }
 .event:hover> img{
     width: 100%;
-    transition-delay:0.1s;
+    transition-delay:0.005s;
 }
-.event:hover> .event-cost {
+/* .event:hover> .event-cost {
     top: 170px
 }
 .event:hover> .event-sale {
     top: 170px
-}
+} */
 /* .event img:hover .event-cost{
     background-color: rgb(37, 155, 155);
 } */
