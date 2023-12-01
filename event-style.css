@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     margin: 0 auto;
 }
-.event-main button{
+#buy-btn{
     font-family: 'Dela Gothic One';
     background-color: #F60;
     border: none;
@@ -29,6 +29,7 @@
     font-size: 25pt;
 }
 .event-image span{
+    margin-top: 1px;
     width: 100%;
     background-image: linear-gradient(to top,rgb(0, 0, 0), rgba(255, 255, 255, 0));
 }
@@ -50,7 +51,30 @@
     display: block;
 
 }
+#places{
+    display: flex;
+    flex-wrap: wrap;
+}
+div[id^="places-row"]{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+}
 
+.places-empty{
+    width: 13px;
+    height: 13px;
+}
+.places-btn{
+    width: 13px;
+    height: 13px;
+}
+
+.places-btn:hover{
+    background-color: #F60;
+}
 
 .event-image img{
 

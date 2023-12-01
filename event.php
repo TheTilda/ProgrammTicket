@@ -8,6 +8,12 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $result = $pdo->prepare("SELECT * FROM `posters` WHERE `id` = :id");
 $result->execute(array('id' => $_GET['id']));
 $array = $result->fetch(PDO::FETCH_ASSOC);
+
+$result_location = $pdo->prepare("SELECT * FROM `locations` WHERE `id` = :id");
+$result_location->execute(array('id' => $array['location']));
+$location = $result_location->fetch(PDO::FETCH_ASSOC);
+
+$json = json_encode(unserialize($location['places']));
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +24,7 @@ $array = $result->fetch(PDO::FETCH_ASSOC);
     <title>Главная страница</title>
     <link rel="stylesheet" href="index-style.css">
 
+    <script src="script.js"></script>
 </head>
 <body>
     <!-- Импортируем хедер -->
@@ -27,15 +34,52 @@ $array = $result->fetch(PDO::FETCH_ASSOC);
 <div class="container">
 <!-- <img src="/images/events/<? echo $array['photo']?>" alt=""> -->
     <div class="event-main">
-        <div class="event-image" style="background-image: url('/images/events/<? echo $array['photo']?>')"><span><h2>Варшавская мелодия собрание текстов и песен</h2></span></div>
+        <div class="event-image" style="background-image: url('/images/events/<? echo $array['photo']?>')"><span><h2><? echo $array['name'] ?></h2></span></div>
         
         <span class="description"> 
             
-            ”Варшавская мелодия”напомнила мне мою судьбу…»- написала одна из зрителей. И это очень здорово, что появился такой отклик. А что ещё надо для того, кто пришел посмотреть спектакль? «Любить по-настоящему и быть счастливым сегодня ничуть не проще, чем в средние века или 50 лет назад – вот ведь о чем идет речь и что вызывает живой отклик в зале». Но в пьесе, кроме темы любви присутствуют еще две темы, которые в спектакле «опущены»: это тема войны и тема взаимоотношений человека и государства (общества). 
+            <? echo $array['description'] ?>
         </span>
         <br>
-        <button>Купить билет</button>
-    </div>
 
+        <div id="places">
+
+        </div>
+
+        <button id="buy-btn">Купить билет</button>
+    </div>
+    <script>
+        try{
+            console.log("test");
+            var places = JSON.parse('<?php echo $json; ?>');
+            console.log(places);
+            var rows = [];
+            places.forEach(el => {
+                if (rows.includes(el.split('p')[0])){
+                    // console.log("в теге if " + el);
+                }else{
+
+                    // console.log("в теге else " + el);
+                    console.log("row: " + rows);
+                    rows.push(el.split('p')[0]);
+                    
+                    document.getElementById("places").innerHTML+='<div id="places-row' + el.split('p')[0] +'"> </div>';
+
+        }});
+            places.forEach(el => {
+                console.log(el)
+                if (el.split('p')[1] == '0'){
+                    console.log('Элемент пустой');
+                    document.getElementById("places-row" + el.split('p')[0] ).innerHTML+='<div  class="places-empty" id="' + el + '">'+ "</div>";
+
+                }else{
+                    document.getElementById("places-row" + el.split('p')[0] ).innerHTML+='<button class="places-btn" id="' + el + '">' + "</button>";
+                }
+                
+            });
+        }catch (err) {
+                    console.log('Поймали ошибку! Вот она: ', err.message)
+                }
+        </script>
 
 </div>
