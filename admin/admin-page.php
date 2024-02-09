@@ -7,7 +7,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $result = $pdo->query("SELECT name, id FROM `locations`");
 $array_names_org = $result->fetchAll(PDO::FETCH_ASSOC);
-print_r($array_names_org);
+
 ?>
 
 <!DOCTYPE html>
